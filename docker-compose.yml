@@ -1,0 +1,19 @@
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: 172.17.0.1
+      PMA_USER: admin
+      PMA_PASSWORD: Girafa@133
+      PMA_PORT: 3306
+    ports:
+      - "8080:80"
