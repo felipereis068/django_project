@@ -27,8 +27,8 @@ urlpatterns = [
     path('painel/', painel),
     path('dologin/', dologin),
     path('dashboard/', dashboard),
-    
-    
+    path('logouts/', logouts),       
+    path('changePassoword/', changePassoword)
 ]
 
 

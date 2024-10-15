@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 # Página inicial
 def home(request):
@@ -71,3 +71,15 @@ def dologin(request):
 # Página inicial do dashboard
 def dashboard(request):
     return render(request, 'dashboard/home.html')
+
+def logouts(request):
+    logout(request)
+    return redirect('/painel/')
+
+""" def changePassoword(request):
+    User.objects.get(email=request.user.email)
+    u.set_password(request.POST.get('password')
+    u.save()
+    logout(request)
+    return redirect('/painel/') """
+    
